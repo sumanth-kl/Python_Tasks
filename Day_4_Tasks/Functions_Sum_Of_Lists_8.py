@@ -6,8 +6,8 @@ def list_total():
     summ=0
     for i in range(li[0],li[-1]):
         summ=summ+li[0]
-        li[0]+=1
-        if li[-1]==li[-1]:
+        #li[0]+=1
+        if li[-1]==True:
             break
     print(summ)
 
