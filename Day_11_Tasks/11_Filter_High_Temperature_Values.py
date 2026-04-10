@@ -7,11 +7,12 @@ Task:
 import numpy as np
 
 t=np.array([28, 31, 35, 27, 40, 22])
-for n in t:
-    if n>30:
-        n==True
-        print(n)
-
-ht=[False,True,True,False,True,False]
-bht=t[ht]
-print(bht)
+filter_arr = []
+for val in t:
+    if val > 30:
+        filter_arr.append(True)
+    else:
+        filter_arr.append(False)
+newarr = t[filter_arr]
+print(filter_arr)
+print(newarr)
