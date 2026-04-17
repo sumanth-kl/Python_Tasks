@@ -1,0 +1,8 @@
+  Name   Average Result
+ Virat 44.000000   Pass
+Jitesh 70.333333   Pass
+Rajath 42.333333   Pass
+ David 29.666667   Fail
+ Bhuvi 74.666667   Pass
+
+Class Average: 52.2

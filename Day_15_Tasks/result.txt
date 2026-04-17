@@ -1,0 +1,1 @@
+Average of students above 50 is: 53.33
