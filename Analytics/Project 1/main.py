@@ -1,17 +1,23 @@
-#Basic Data Loading & Cleaning
-#Given a CSV file containing railway gauge data.
+"""
+Scenario 1: Basic Data Loading & Cleaning
+Given a CSV file containing railway gauge data.
+Tasks:
+1. Load the dataset into a Pandas DataFrame.
+2. Display the first 5 rows and column names.
+3. Check for missing values and replace them with 0.
+4. Convert all gauge columns (Broad, Metre, Narrow, Total) to numeric types."""
 
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
 
-#1. Load the dataset into a Pandas DataFrame.
+#1.1 Load the dataset into a Pandas DataFrame.
 df=pd.read_csv('railway_gauges_1.csv')
 
-#2. Display the first 5 rows and column names.
+#1.2 Display the first 5 rows and column names.
 print("Top 5 Rows are\n",df.head(),'\n')
 
-#3. Check for missing values and replace them with 0.
+#1.3. Check for missing values and replace them with 0.
 # Checking missing values per column
 print("Missing values are\n",df.isnull().sum(),'\n')
 
@@ -23,7 +29,7 @@ print(missing_rows)
 df.fillna(0, inplace=True)
 print(df)
 
-#4. Convert all gauge columns (Broad, Metre, Narrow, Total) to numeric types.
+#1.4. Convert all gauge columns (Broad, Metre, Narrow, Total) to numeric types.
 df.iloc[:, 1:] = df.iloc[:, 1:].apply(pd.to_numeric, errors='coerce').fillna(0)
 print(df.info())
 print(df)
