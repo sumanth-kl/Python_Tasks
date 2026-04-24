@@ -203,7 +203,7 @@ plt.savefig("Graphs/genre_distribution.png")
 
 #You are asked to perform a detailed analysis of review patterns.
 # ============================================================
-"""👉 Part 1: Feature Engineering
+"""👉 Part 5.1: Feature Engineering
 1. Create a new column:
     ○ score_category:
         ■ score >= 9 → "Excellent"
@@ -222,7 +222,7 @@ df['editors_choice'] = df['editors_choice'].replace({'Y': 1, 'N': 0})
 print(df['editors_choice'])
 
 #=============================================================
-"""👉 Part 2: NumPy Analysis
+"""👉 Part 5.2: NumPy Analysis
 3. Use NumPy to:
     ○ Calculate yearly score growth using np.diff() on average yearly scores"""
 
@@ -239,7 +239,7 @@ for year, growth in zip(years, yearly_score_growth):
         print(f"{year}: {growth:+.2f}")
 
 #=============================================================
-"""👉 Part 3: Visualizations
+"""👉 Part 5.3: Visualizations
 📈 Line Graph
 4. Plot trend of:
     ○ Average score per release_year
@@ -281,14 +281,14 @@ plt.tight_layout()
 plt.savefig("Graphs/score_distribution.png")
 
 #=============================================================
-"""👉 Part 4: Save All Graphs
+"""👉 Part 5.4: Save All Graphs
 plt.savefig("score_trend.png")
 plt.savefig("score_category_stacked.png")
 plt.savefig("score_distribution.png")"""
 # saved in Graphs folder
 
 #=============================================================
-#👉 Part 5: Insights
+#👉 Part 5.5: Insights
 
 # ● Which years had highest scores
 best_year = yearly_averages.idxmax()
@@ -296,15 +296,15 @@ best_score = yearly_averages.max()
 print(f"\nYear with high score is {best_year} with the score {best_score}")
 
 # ● Whether high scores increased over time
-# 1. Get the average score of the very first year
+# Getting the average score of the very first year
 first_year_avg = yearly_averages.iloc[0]
 first_year = yearly_averages.index[0]
 
-# 2. Get the average score of the most recent year
+# Getting the average score of the most recent year
 last_year_avg = yearly_averages.iloc[-1]
 last_year = yearly_averages.index[-1]
 
-# 3. Compare and print the insight
+# Comparing and printting the insight
 print(f"\nIn {first_year}, the average was {first_year_avg:.2f}."
       f"By {last_year}, it changed to {last_year_avg:.2f}.")
 if last_year_avg > first_year_avg:
@@ -313,15 +313,15 @@ else:
     print("Conclusion: No, average scores have not increased over time.")
 
 # ● If editors_choice correlates with high scores
-# 1. Group by editors_choice and calculate the average score
+# Group by editors_choice and calculate the average score
 choice_comparison = df.groupby('editors_choice')['score'].mean()
 
-# 2. Print the results
+# Print the results
 print("\nAverage scores based on Editor's Choice:")
 print(f"Not Editor's Choice (0): {choice_comparison[0]:.2f}")
 print(f"Editor's Choice (1):     {choice_comparison[1]:.2f}")
 
-# 3. Simple logic check
+# Simple logic check
 if choice_comparison[1] > choice_comparison[0]:
     print("Conclusion: Yes, Editor's Choice games correlate with higher scores.")
 else:
