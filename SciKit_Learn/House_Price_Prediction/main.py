@@ -78,6 +78,7 @@ from sklearn.metrics import r2_score
 # ============================================================
 # Linear Regression models the relationship between features and 
 # price by fitting a linear equation (a straight line) to the data.
+
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 print(regressor)
@@ -94,6 +95,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # This model breaks down the dataset into smaller subsets while 
 # simultaneously developing an associated decision tree (flowchart-like).
+
 from sklearn.tree import DecisionTreeRegressor
 regressor = DecisionTreeRegressor(random_state=0)
 print(regressor)
@@ -110,6 +112,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # An ensemble method that operates by constructing many decision 
 # trees and outputting the average prediction of the individual trees.
+
 from sklearn.ensemble import RandomForestRegressor
 regressor = RandomForestRegressor(n_estimators=100, random_state=0)
 print(regressor)
@@ -126,6 +129,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # SVR tries to fit the error within a certain threshold (epsilon) 
 # instead of just minimizing the error, using kernels for non-linear data.
+
 from sklearn.svm import SVR
 regressor = SVR(kernel='rbf')
 print(regressor)
@@ -142,6 +146,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # KNN predicts the value of a data point based on how similar it 
 # is to its surrounding neighbors in the training set.
+
 from sklearn.neighbors import KNeighborsRegressor
 regressor = KNeighborsRegressor(n_neighbors=5)
 print(regressor)
@@ -158,6 +163,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # This builds the model in stages; it adds new trees that focus 
 # specifically on correcting the errors made by previous trees.
+
 from sklearn.ensemble import GradientBoostingRegressor
 regressor = GradientBoostingRegressor(n_estimators=100, random_state=0)
 print(regressor)
@@ -174,6 +180,7 @@ print("{:.2f}".format(r2_score(y_test, y_pred)))
 # ============================================================
 # A type of linear regression that uses "L2 Regularization" to 
 # prevent overfitting by penalizing large coefficients.
+
 from sklearn.linear_model import Ridge
 regressor = Ridge(alpha=1.0)
 print(regressor)
@@ -184,3 +191,17 @@ y_pred = regressor.predict(X_test)
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
 
+
+"""
+# Example: 3 bed, 2 bath, 2000 sqft living, 5000 sqft lot, 2 floors, 
+# condition 3, grade 7, 0 basement, built 1990, renovated 0
+new_house = [[3, 2, 2000, 5000, 2, 3, 7, 0, 1990, 0]]
+
+# 1. Scale the input using the existing scaler 'sc'
+new_house_scaled = sc.transform(new_house)
+
+# 2. Predict using your chosen regressor (e.g., Gradient Boosting)
+predicted_price = regressor.predict(new_house_scaled)
+
+print(f"The predicted price of the house is: ${predicted_price[0]:,.2f}")
+"""

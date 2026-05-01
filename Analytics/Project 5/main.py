@@ -29,3 +29,36 @@ plt.tight_layout()
 # 2.6 ● Save the graph with a suitable filename.
 plt.savefig('Graphs/selling_price_trend.png')
 plt.show()
+
+#===========================================================================================================================
+#�� Scenario 6: Car Age Category Analysis + Bar Chart
+#===========================================================================================================================
+# 6.1 Create a new column 'Car Age Category' using Pandas logic
+def get_age_category(year):
+    if year >= 2015:
+        return "New"
+    elif 2010 <= year <= 2014:
+        return "Medium"
+    else:
+        return "Old"
+
+df['Car Age Category'] = df['Year'].apply(get_age_category)
+
+# 6.2 Count the number of cars in each category
+age_counts = df['Car Age Category'].value_counts()
+
+# 6.3 Convert category names and counts into NumPy arrays
+categories = np.array(age_counts.index)
+counts = np.array(age_counts.values)
+
+# 6.4 Plot a bar chart using Matplotlib
+plt.bar(categories, counts, color=['#2ecc71', '#f1c40f', '#e74c3c']) # Green, Yellow, Red
+
+# 6.5 Add title and labels
+plt.title('Car Distribution by Age Category')
+plt.xlabel('Car Age Category')
+plt.ylabel('Count')
+
+# 6.6 Save the graph
+plt.savefig('Graphs/car_age_category_distribution.png')
+plt.show()
