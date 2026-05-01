@@ -56,7 +56,7 @@ Mean = 0
 Standard deviation = 1
 '''
 
-X_train = sc.fit_transform(X_train)
+X_train_scaled = sc.fit_transform(X_train)
 
 '''
 This does 2 things:
@@ -68,7 +68,7 @@ transform() → scales data using that info
 '''
 
 # Transform test data (important: do NOT fit again)
-X_test = sc.transform(X_test)
+X_test_scaled = sc.transform(X_test)
 
 
 from sklearn.metrics import r2_score
@@ -83,8 +83,8 @@ from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -100,8 +100,8 @@ from sklearn.tree import DecisionTreeRegressor
 regressor = DecisionTreeRegressor(random_state=0)
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -117,8 +117,8 @@ from sklearn.ensemble import RandomForestRegressor
 regressor = RandomForestRegressor(n_estimators=100, random_state=0)
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -134,8 +134,8 @@ from sklearn.svm import SVR
 regressor = SVR(kernel='rbf')
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -151,8 +151,8 @@ from sklearn.neighbors import KNeighborsRegressor
 regressor = KNeighborsRegressor(n_neighbors=5)
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -168,8 +168,8 @@ from sklearn.ensemble import GradientBoostingRegressor
 regressor = GradientBoostingRegressor(n_estimators=100, random_state=0)
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
@@ -185,8 +185,8 @@ from sklearn.linear_model import Ridge
 regressor = Ridge(alpha=1.0)
 print(regressor)
 
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+regressor.fit(X_train_scaled, y_train)
+y_pred = regressor.predict(X_test_scaled)
 
 print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
