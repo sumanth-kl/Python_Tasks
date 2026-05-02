@@ -192,6 +192,89 @@ print('\n'+'-'*20+'R2 Score on the Test set'+'-'*20)
 print("{:.2f}".format(r2_score(y_test, y_pred)))
 
 
+from sklearn.metrics import mean_absolute_error
+
+# ============================================================
+# 8. Lasso Regression
+# ============================================================
+# Uses "L1 Regularization" which can shrink some coefficients 
+# to zero, effectively performing automatic feature selection.
+
+from sklearn.linear_model import Lasso
+model = Lasso()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print('-'*80, "\nLasso Regression Performance:")
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R2 Score:", r2_score(y_test, y_pred))
+
+
+# ============================================================
+# 9. AdaBoost Regressor
+# ============================================================
+# "Adaptive Boosting" that weights difficult-to-predict 
+# instances more heavily in subsequent iterations.
+
+from sklearn.ensemble import AdaBoostRegressor
+model = AdaBoostRegressor()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print('-'*80, "\nAdaBoost Regressor Performance:")
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R2 Score:", r2_score(y_test, y_pred))
+
+
+# ============================================================
+# 10. Bayesian Ridge Regression
+# ============================================================
+# A probabilistic approach to linear regression that includes 
+# regularization parameters within the estimation process.
+
+from sklearn.linear_model import BayesianRidge
+model = BayesianRidge()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print('-'*80, "\nBayesian Ridge Performance:")
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R2 Score:", r2_score(y_test, y_pred))
+
+
+# ============================================================
+# 11. Extra Trees Regressor
+# ============================================================
+# "Extremely Randomized Trees" that choose split points at 
+# random to reduce variance and improve training speed.
+
+from sklearn.ensemble import ExtraTreesRegressor
+model = ExtraTreesRegressor()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print('-'*80, "\nExtra Trees Performance:")
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R2 Score:", r2_score(y_test, y_pred))
+
+
+# ============================================================
+# 12. Huber Regressor
+# ============================================================
+# A regression model that is robust to outliers; it uses a 
+# linear loss for samples classified as outliers and a 
+# squared loss for samples classified as inliers.
+
+from sklearn.linear_model import HuberRegressor
+model = HuberRegressor()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print('-'*80, "\nHuber Regressor Performance:")
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R2 Score:", r2_score(y_test, y_pred))
+
+
 """
 # Example: 3 bed, 2 bath, 2000 sqft living, 5000 sqft lot, 2 floors, 
 # condition 3, grade 7, 0 basement, built 1990, renovated 0
