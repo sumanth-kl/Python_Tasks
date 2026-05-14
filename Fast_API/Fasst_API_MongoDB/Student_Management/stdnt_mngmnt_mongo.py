@@ -1,5 +1,5 @@
 # ============================================================
-# 📝 FastAPI TODO App - MongoDB Atlas + MongoEngine
+# 📝 FastAPI STUDENT MANAGEMENT App - MongoDB Atlas + MongoEngine
 # pip install fastapi uvicorn mongoengine pymongo
 # ============================================================
 
@@ -17,7 +17,7 @@ app = FastAPI()
 # ------------------------------------------------------------
 MONGO_URL = "mongodb+srv://sumanthnov1_db_user:VXwMNIln0gIgvH0N@sumanth.bfc6ate.mongodb.net/student_db?retryWrites=true&w=majority"
 '''
-mongodb+srv://username:password@clustername.xxxxx.mongodb.net/todo_db?retryWrites=true&w=majority
+mongodb+srv://username:password@clustername.xxxxx.mongodb.net/student_db?retryWrites=true&w=majority
 │              │        │        │                              │
 │              │        │        │                              └── Database name
 │              │        │        └──────────────────────────────── Cluster URL
