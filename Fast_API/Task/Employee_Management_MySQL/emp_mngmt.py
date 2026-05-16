@@ -10,6 +10,7 @@ from pydantic import BaseModel
 from sqlalchemy import create_engine, CheckConstraint, Column, Integer, String, Float, DateTime, ForeignKey
 from sqlalchemy.orm import declarative_base, sessionmaker, Session, relationship
 from typing import Literal, Optional
+from fastapi.responses import PlainTextResponse
 
 # ------------------------------------------------------------
 # 🚀 Create FastAPI App
@@ -64,7 +65,7 @@ class EmployeeResponse(BaseModel):
     emp_sal: float
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # For returning attendance details
 class AttendanceResponse(BaseModel):
@@ -75,7 +76,7 @@ class AttendanceResponse(BaseModel):
     leave_reason: Optional[str]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # This wrapper allows your function to return {"message": "...", "data": ...}
 class AttendancePostResponseWrapper(BaseModel):
@@ -83,7 +84,7 @@ class AttendancePostResponseWrapper(BaseModel):
     data: AttendanceResponse  # Reuses your existing AttendanceResponse model
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # ------------------------------------------------------------
 # 🗄️ SQLAlchemy Database Models
@@ -243,11 +244,41 @@ def mark_attendance(
     # Returns the payload matching the AttendancePostResponseWrapper structure
     return {"message": "Attendance marked", "data": new_log}
 
-# 8. GET /attendance (Get historical attendance logs)
-@app.get("/attendance", response_model=List[AttendanceResponse])
+# 8. GET /attendance (Get all attendance records with formatted output)
+@app.get("/attendance", response_class=PlainTextResponse)
 def get_attendance_records(db: Session = Depends(get_db)):
-    # Returns the list directly to match List[AttendanceResponse]
-    return db.query(EmployeeAttendance).all()
+    # 1. Fetch all records from the attendance table
+    records = db.query(EmployeeAttendance).all()
+    
+    present_list = []
+    leave_list = []
+    
+    # 2. Loop through records and structure the text lines
+    for record in records:
+        emp_id = record.emp_id
+        emp_name = record.emp_name
+        
+        # Match your exact lowercase check ("present" or "leave")
+        if record.emp_atdnce.lower() == "present":
+            present_list.append(f"employee id: {emp_id}\namployee name: {emp_name}")
+        else:
+            reason = record.leave_reason or "Not Specified"
+            leave_list.append(f"employee id: {emp_id}\namployee name: {emp_name}\nreason: {reason}")
+            
+    # 3. Construct the exact layout you requested
+    border = "=" * 50
+    
+    output = []
+    output.append(border)
+    output.append(f"{'\"Employees Present\"':>45}")
+    # Separates distinct employees by a clean double newline block
+    output.append("\n\n".join(present_list) if present_list else "None")
+    
+    output.append(border)
+    output.append(f"{'\"Employees on Leave\"':>46}")
+    output.append("\n\n".join(leave_list) if leave_list else "None")
+    
+    return "\n".join(output)
 
 # 9. GET /high-salary-employees (Get profiles meeting salary threshold)
 @app.get("/high-salary-employees", response_model=List[EmployeeResponse])
