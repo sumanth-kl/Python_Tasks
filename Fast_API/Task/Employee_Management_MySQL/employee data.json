@@ -1,0 +1,178 @@
+[
+  {
+    "emp_id": 1,
+    "emp_name": "Virat",
+    "emp_dprt": "CEO",
+    "emp_dsgn": "MD",
+    "date_time": "2026-05-15T08:09:27",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:09:27",
+    "emp_sal": 200000
+  },
+  {
+    "emp_id": 2,
+    "emp_name": "Rohit Sharma",
+    "emp_dprt": "Management",
+    "emp_dsgn": "Team Lead",
+    "date_time": "2026-05-15T08:16:16",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:16:16",
+    "emp_sal": 95000
+  },
+  {
+    "emp_id": 3,
+    "emp_name": "Jasprit Bumrah",
+    "emp_dprt": "Operations",
+    "emp_dsgn": "Senior Analyst",
+    "date_time": "2026-05-15T08:16:52",
+    "emp_atdnce": "leave",
+    "leave_reason": "Personal family emergency",
+    "emp_joindt": "2026-05-15T08:16:52",
+    "emp_sal": 72000.5
+  },
+  {
+    "emp_id": 4,
+    "emp_name": "Smriti Mandhana",
+    "emp_dprt": "Human Resources",
+    "emp_dsgn": "HR Manager",
+    "date_time": "2026-05-15T08:17:16",
+    "emp_atdnce": "leave",
+    "leave_reason": "Medical checkup appointment",
+    "emp_joindt": "2026-05-15T08:17:16",
+    "emp_sal": 65000
+  },
+  {
+    "emp_id": 5,
+    "emp_name": "Suryakumar Yadav",
+    "emp_dprt": "Engineering",
+    "emp_dsgn": "Software Architect",
+    "date_time": "2026-05-15T08:17:31",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:17:31",
+    "emp_sal": 110000
+  },
+  {
+    "emp_id": 6,
+    "emp_name": "Mithali Raj",
+    "emp_dprt": "Finance",
+    "emp_dsgn": "Chief Financial Officer",
+    "date_time": "2026-05-15T08:17:46",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:17:46",
+    "emp_sal": 140000
+  },
+  {
+    "emp_id": 7,
+    "emp_name": "Hardik Pandya",
+    "emp_dprt": "Engineering",
+    "emp_dsgn": "Software Engineer",
+    "date_time": "2026-05-15T08:18:04",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:18:04",
+    "emp_sal": 45000
+  },
+  {
+    "emp_id": 8,
+    "emp_name": "KL Rahul",
+    "emp_dprt": "Engineering",
+    "emp_dsgn": "QA Automation Engineer",
+    "date_time": "2026-05-15T08:18:20",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:18:20",
+    "emp_sal": 52000
+  },
+  {
+    "emp_id": 9,
+    "emp_name": "Rishabh Pant",
+    "emp_dprt": "Engineering",
+    "emp_dsgn": "DevOps Specialist",
+    "date_time": "2026-05-15T08:18:34",
+    "emp_atdnce": "leave",
+    "leave_reason": "Routine medical checkup",
+    "emp_joindt": "2026-05-15T08:18:34",
+    "emp_sal": 68000
+  },
+  {
+    "emp_id": 10,
+    "emp_name": "Axar Patel",
+    "emp_dprt": "Engineering",
+    "emp_dsgn": "UI/UX Designer",
+    "date_time": "2026-05-15T08:18:49",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:18:49",
+    "emp_sal": 48000
+  },
+  {
+    "emp_id": 11,
+    "emp_name": "Shubman Gill",
+    "emp_dprt": "Management",
+    "emp_dsgn": "Project Manager",
+    "date_time": "2026-05-15T08:19:03",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:19:03",
+    "emp_sal": 88000
+  },
+  {
+    "emp_id": 12,
+    "emp_name": "Shreyas Iyer",
+    "emp_dprt": "Management",
+    "emp_dsgn": "Product Owner",
+    "date_time": "2026-05-15T08:19:16",
+    "emp_atdnce": "leave",
+    "leave_reason": "Urgent personal work",
+    "emp_joindt": "2026-05-15T08:19:16",
+    "emp_sal": 75000
+  },
+  {
+    "emp_id": 13,
+    "emp_name": "Ravindra Jadeja",
+    "emp_dprt": "Management",
+    "emp_dsgn": "Operations Director",
+    "date_time": "2026-05-15T08:19:29",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:19:29",
+    "emp_sal": 125000
+  },
+  {
+    "emp_id": 14,
+    "emp_name": "Ravichandran Ashwin",
+    "emp_dprt": "Finance",
+    "emp_dsgn": "Senior Accountant",
+    "date_time": "2026-05-15T08:19:42",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:19:42",
+    "emp_sal": 62000
+  },
+  {
+    "emp_id": 15,
+    "emp_name": "Mohammed Shami",
+    "emp_dprt": "Finance",
+    "emp_dsgn": "Financial Analyst",
+    "date_time": "2026-05-15T08:19:52",
+    "emp_atdnce": "leave",
+    "leave_reason": "Sick leave due to fever",
+    "emp_joindt": "2026-05-15T08:19:52",
+    "emp_sal": 55000
+  },
+  {
+    "emp_id": 16,
+    "emp_name": "Yuzvendra Chahal",
+    "emp_dprt": "Finance",
+    "emp_dsgn": "Payroll Specialist",
+    "date_time": "2026-05-15T08:20:05",
+    "emp_atdnce": "present",
+    "leave_reason": null,
+    "emp_joindt": "2026-05-15T08:20:05",
+    "emp_sal": 42000
+  }
+]
