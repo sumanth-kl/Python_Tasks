@@ -101,7 +101,7 @@ timedelta(days=7)           -> 7 days
 timedelta(days=30)          -> 30 days
 '''
 
-ACCESS_TOKEN_EXPIRE = timedelta(hours=1)
+ACCESS_TOKEN_EXPIRE = timedelta(minutes=15)
 
 # ============================================================
 # 🧾 Pydantic Models
